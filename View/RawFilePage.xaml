@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FileReadAndWrite.View.RawFilePage"
+             Title="Odczyt z Zasobów">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Treść pliku " />
+                        <Span Text="data.txt" FontAttributes="Bold" />
+                        <Span Text=" znajdującego się w zasobach aplikacji:" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label Text="{Binding RawFileContent}" />
+            <Button Text="Załaduj dane" Command="{Binding LoadRawFileCmd}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
