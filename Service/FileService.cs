@@ -7,11 +7,18 @@ public class FileService
     public FileService()
     {
         // Plik, który będzie przechowywał zawartość naszej aplikacji
-        _filePath = Path.Combine(FileSystem.AppDataDirectory, "data.txt");
+        _filePath = Path.Combine(FileSystem.AppDataDirectory, "tekst.txt");
     }
 
-    public async Task SaveToFile(){
+    public async Task SaveToFile(string content){
+        await File.WriteAllTextAsync(_filePath, content);
+    }
 
+    public async Task<string> LoadFromFile(){
+        if (!File.Exists(_filePath))
+            return "Nie znaleziono pliku!";
+
+        return await File.ReadAllTextAsync(_filePath);
     }
     
     public async Task<string> LoadAsset(string asset){

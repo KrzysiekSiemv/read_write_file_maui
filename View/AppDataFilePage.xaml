@@ -8,7 +8,10 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            
+            <Label Text="Zawartość, która jest zapisywana w plikach aplikacji:" />
+            <Entry Text="{Binding AppDataFileContent}" />
+            <Button Text="Załaduj dane" Command="{Binding LoadAppDataFileCmd}" />
+            <Button Text="Zapisz dane" Command="{Binding SaveAppDataFileCmd}" />
         </VerticalStackLayout>
     </ScrollView>
 

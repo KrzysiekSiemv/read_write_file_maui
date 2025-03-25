@@ -26,7 +26,7 @@ public class MainViewModel : INotifyPropertyChanged {
     }
 
     private async Task EnterAppDataFile(){
-        await _navigation.PushAsync(new AppDataFilePage());
+        await _navigation.PushAsync(new AppDataFilePage(_fileService));
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
